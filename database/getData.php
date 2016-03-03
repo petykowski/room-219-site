@@ -1,7 +1,7 @@
 <?php
 
 // Access provided by database configuration file
-require_once '../config.php';
+require_once 'config.php';
 
 // Create connection to MySQL Database
 $con = new mysqli($servername, $username, $password, $dbname);
