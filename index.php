@@ -3,7 +3,7 @@
         <title>Temperature in 219</title>
         <link rel="stylesheet" href="style.css" type="text/css">
         <script src="https://use.typekit.net/hqb0pcr.js"></script>
-        <script>try{Typekit.load({ async: false });}catch(e){}</script>
+        <script>try{Typekit.load({ async: true });}catch(e){}</script>
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="viewport" content="user-scalable=0, initial-scale=1.0" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

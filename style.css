@@ -1,0 +1,231 @@
+body, html {
+    background-color: black;
+    font-family: "brandon-grotesque",sans-serif;
+    color: #ffffff;
+    margin: 0;
+    height: 100%;
+
+}
+
+h1 {
+    color: #ffffff;
+    font-family: "brandon-grotesque",sans-serif;
+    font-size: 85px;
+    margin-bottom: 0px;
+}
+
+p,a {
+    font-family: "brandon-grotesque",sans-serif;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+div.currenttemp {
+    padding-top: 150px;
+    width: 100%;
+    margin-bottom: -5px;
+    text-align: center;
+/*    background-color: blue;*/
+}
+
+div.currenttemp p{
+    font-size: 14px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+div.lowtemp {
+    float: left;
+    display:inline-block;
+    width: 40%;
+    text-align: right;
+/*    background-color: red;*/
+}
+
+div.hightemp {
+    float: right;
+    text-align: left;
+    width: 40%;
+    display:inline-block;
+/*    background-color: green;*/
+}
+
+div.avgtemp {
+    width: 20%;
+    float: auto;
+    text-align: center;
+    display:inline-block;
+/*    background-color: yellow;*/
+}
+
+div.subtext-low {
+    float: left;
+    width: 40%;
+    display:inline-block;
+    display: none;
+/*    background-color: green;*/
+}
+
+div.subtext-low p{
+    font-size: 16px;
+    font-style: italic;
+    text-align: right;
+/*    display: none;*/
+}
+
+
+div.subtext-avg {
+    width: 100%;
+    display: inline-block;
+    display: none;
+/*    background-color: yellow;*/
+}
+
+div.subtext-avg p {
+    font-size: 16px;
+    font-style: italic;
+    text-align: center;
+/*    display: none;*/
+}
+
+div.subtext-high {
+    float: right;
+    width: 40%;
+    display:inline-block;
+    display: none;
+/*    background-color: red;*/
+}
+
+div.subtext-high p {
+    font-size: 16px;
+    font-style: italic;
+    text-align: left;
+/*    display: none;*/
+}
+
+#circle {
+	width: 100px;
+	height: 100px;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50%;
+    border: 3px solid red;
+}
+
+#outer {
+  width: 100%;
+  text-align: center;
+}
+
+#chart {
+    display: inline-block;
+    width: 1000px;
+    height: 500px;
+}
+
+#footer {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 100%;
+  text-align: right;
+}
+
+/*iPhone 6/s - Portrait*/
+
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 668px) 
+and (orientation : portrait) {
+    body {
+        background-color: black;
+        width: 100%;
+    }
+    h1 {
+        font-size: 75px;
+    }
+    div.lowtemp {
+    width: 33%;
+    }
+    div.avgtemp {
+    width: 33%;
+    }
+    div.hightemp {
+    width: 33%;
+    }
+    div.subtext-low {
+        width: 100%;
+        display: none;
+    }
+
+    div.subtext-low p{
+        text-align: center;
+    }
+
+
+    div.subtext-avg {
+        width: 100%;
+        display: none;
+    }
+
+    div.subtext-avg p {
+        text-align: center;
+    }
+
+    div.subtext-high {
+        width: 100%;
+        display: none;
+    }
+
+    div.subtext-high p {
+        text-align: center;
+    }
+}
+
+/*iPhone 6/s - Landscape*/
+
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 667px) 
+and (orientation : landscape) {
+    body {
+        background-color: black;
+        width: 100%;
+    }
+    h1 {
+        font-size: 75px;
+    }
+    div.currenttemp {
+        padding-top: 45px;
+    }
+
+    div.subtext-low p{
+        margin-top: 0px;
+        text-align: center;
+    }
+
+    div.subtext-avg p {
+        margin-top: 0px;
+        text-align: center;
+    }
+
+    div.subtext-high p {
+        margin-top: 0px;
+        text-align: center;
+    }
+}
+
+/*iPad mini - Portrait*/
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio: 1)  { 
+    div.currenttemp {
+    padding-top: 250px;
+}
+    p,a {
+    font-size: 20px;
+}
+}
