@@ -61,7 +61,7 @@ $table['cols'] = array(
     
     //Labels for the chart, these represent the column titles
     array('id' => '', 'label' => 'Date', 'type' => 'string'),
-    array('id' => '', 'label' => 'Days Average', 'type' => 'number')
+    array('id' => '', 'label' => 'Temperature (F)', 'type' => 'number')
     );
 
 // Prepare for ForEach loop
