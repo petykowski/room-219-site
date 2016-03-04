@@ -62,30 +62,32 @@ $table['cols'] = array(
     //Labels for the chart, these represent the column titles
     array('id' => '', 'label' => 'Date', 'type' => 'string'),
     array('id' => '', 'label' => 'Temperature (F)', 'type' => 'number')
-    );
+);
 
 // Prepare for ForEach loop
 $rows = array();
 $count = 30;
-$daysago = 31;
+$daysago = 30;
 
 
 // Parse through results
 foreach($avgtemps as $row){
     $temp = array();
     
+    // Get date of reading
     $date = new DateTime();
     $date->sub(new DateInterval('P'.$daysago.'D'));
     $readingdate = $date->format('n\/d');
     
-    
-    // Properly label today vs days ago
+    // Add date and temperature to temp arrays then to rows array
     $temp[] = array('v' => (string) $readingdate);
     $temp[] = array('v' => (float) $row); 
     $rows[] = array('c' => $temp);
+    
+    // Prepare for next loop
     $count--;
     $daysago--;
-    }
+}
 
 // Free up memory
 $result->free();
