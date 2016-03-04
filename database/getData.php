@@ -67,20 +67,24 @@ $table['cols'] = array(
 // Prepare for ForEach loop
 $rows = array();
 $count = 30;
+$daysago = 31;
+
 
 // Parse through results
 foreach($avgtemps as $row){
     $temp = array();
     
+    $date = new DateTime();
+    $date->sub(new DateInterval('P'.$daysago.'D'));
+    $readingdate = $date->format('n\/d');
+    
+    
     // Properly label today vs days ago
-    if ($count == 0) {
-        $temp[] = array('v' => (string) "Today");
-    } else {
-        $temp[] = array('v' => (string) "$count days ago");
-    }
+    $temp[] = array('v' => (string) $readingdate);
     $temp[] = array('v' => (float) $row); 
     $rows[] = array('c' => $temp);
     $count--;
+    $daysago--;
     }
 
 // Free up memory
