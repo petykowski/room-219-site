@@ -55,7 +55,7 @@ require_once 'database/request.php';
         </div>
         
         <div id="outer">
-            <div id="chart"></div>
+            <div id="chartdiv" class="chart"></div>
         </div>
         
         <div id="footer">
