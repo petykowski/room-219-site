@@ -12,7 +12,7 @@ function drawChart() {
 var data = new google.visualization.DataTable(jsonData);
 
 var options = {
-    title: 'Temperature Over 30 Days',
+    title: 'Average Temperature',
     curveType: 'function',
     legend: {
         position: 'bottom'
@@ -30,7 +30,9 @@ var options = {
         },
     },
     lineWidth: 1.5,
+    pointSize: 3,
     legend: {
+        position: 'bottom',
         textStyle: {
             color: 'white',
         },
