@@ -48,8 +48,40 @@ div.currenttemp {
 /*    background-color: blue;*/
 }
 
-.bottom {
-    border-bottom: 1px solid #ccc;
+
+/*
+ * Temperature
+ */
+.temp-main {
+    text-align: center;
+    height: 360px;
+    margin: 20px 0px 20px 0px;
+    border-right: 1px solid #333;
+}
+
+.temp-main p {
+    font-size: 14px;
+}
+
+.temp-main h1 {
+    padding-top: 85px;
+    
+}
+
+/*
+ * Grid Borders
+ */
+
+.border-bottom {
+    border-bottom: 1px solid #333;
+}
+
+.border-right {
+    border-right: 1px solid #333;
+}
+
+.debug {
+    background-color: aliceblue;
 }
 
 div.currenttemp p{
@@ -142,14 +174,14 @@ div.subtext-high p {
 }
 
 #chartdiv {
-    width: 80%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
 
 .chart {
   width: 100%; 
-  height: 550px;
+  height: 400px;
 }
 
 #footer {
@@ -158,6 +190,14 @@ div.subtext-high p {
     right: 10px;
     width: 100%;
     text-align: right;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media(min-width:768px){
+   .temp-main h1 {
+       font-size: 70px;
+       padding-top: 85px;
+    } 
 }
 
 
@@ -209,6 +249,9 @@ and (orientation : portrait) {
 
     div.subtext-high p {
         text-align: center;
+    }
+    .temp-main {
+        border-right: none;
     }
 }
 

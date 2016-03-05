@@ -14,6 +14,7 @@ var data = new google.visualization.DataTable(jsonData);
 var options = {
     title: 'Average Temperature',
     curveType: 'function',
+    chartArea: { left: '8%', top: '8%', width: "90%", height: "80%" },
     legend: {
         position: 'bottom'
     },
