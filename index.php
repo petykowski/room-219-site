@@ -12,14 +12,15 @@
         <script src="js/script.js"></script>
         <script src="Chart.js-2.0.0-beta2/Chart.js"></script>
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-        <script src="js/chart.js"></script>       
+<!--        <script src="js/chart.js"></script>       -->
     </head>
+    
     <body>
         
-<?php
-// Request data from MySQL Server via request.php
-require_once 'database/request.php';
-?>
+        <?php
+        // Request data from MySQL Server via request.php
+        require_once 'database/request.php';
+        ?>
   
         <div class="currenttemp">
             <?php
@@ -32,10 +33,17 @@ require_once 'database/request.php';
             <p>Last reading on <?php echo date('F j, Y \a\t h:i A \(T\)',strtotime($currentDate[0]));?></p>
         </div>
         
-        <div class="row">
-            <div class="col-xs-4 lowtempmobile"><p><?php echo round($lowtemp[0], 1) . "\n&deg;F";?></p></div>
-            <div class="col-xs-4 avgtempmobile"><p><?php echo round($avgrow[0], 1) . "\n&deg;F";?></p></div>
-            <div class="col-xs-4 hightempmobile"><p><?php echo round($hightemp[0], 1) . "\n&deg;F";?></p></div>
+        <div class="row no-margin">
+            <div class="col-xs-4 col-sm-5 text-right"><p><?php echo round($lowtemp[0], 1) . "\n&deg;F";?></p></div>
+            <div class="col-xs-4 col-sm-2 text-center"><p><?php echo round($avgrow[0], 1) . "\n&deg;F";?></p></div>
+            <div class="col-xs-4 col-sm-5 text-left"><p><?php echo round($hightemp[0], 1) . "\n&deg;F";?></p></div>
+        </div>
+        
+<!-- WARNING: Text does not align properly when on small mobile device, should align center -->
+        <div class="row no-margin">
+            <div class="col-xs-12 col-sm-5 text-right text-center-sm"><p>hello1</p></div>
+            <div class="col-xs-12 col-sm-2 text-center text-center-sm"><p>hello2</p></div>
+            <div class="col-xs-12 col-sm-5 text-left text-center-sm"><p>hello3</p></div>
         </div>
         
         <div class="subtext-low">
@@ -51,11 +59,11 @@ require_once 'database/request.php';
         </div>
         
         <div id="outer">
-            <div id="chartdiv" class="chart"></div>
+<!--            <div id="chartdiv" class="chart"></div>-->
         </div>
         
         <div id="footer">
-            <a href="https://github.com/spetykowski/room-219">Code</a>
+            <u><a href="https://github.com/spetykowski/room-219">Code</a></u>
         </div>
         
     </body>
