@@ -1,11 +1,13 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <title>Temperature in 219</title>
-        <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="/css/style.css" type="text/css">
         <script src="https://use.typekit.net/hqb0pcr.js"></script>
         <script>try{Typekit.load({ async: true });}catch(e){}</script>
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="viewport" content="user-scalable=0, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="js/script.js"></script>
         <script src="Chart.js-2.0.0-beta2/Chart.js"></script>
@@ -30,16 +32,10 @@ require_once 'database/request.php';
             <p>Last reading on <?php echo date('F j, Y \a\t h:i A \(T\)',strtotime($currentDate[0]));?></p>
         </div>
         
-        <div class="lowtemp">
-            <p><?php echo round($lowtemp[0], 1) . "\n&deg;F";?></p>
-        </div>
-        
-        <div class="avgtemp">
-            <p><?php echo round($avgrow[0], 1) . "\n&deg;F";?></p>
-        </div>
-        
-        <div class="hightemp">
-            <p><?php echo round($hightemp[0], 1) . "\n&deg;F";?></p>
+        <div class="row">
+            <div class="col-xs-4 lowtempmobile"><p><?php echo round($lowtemp[0], 1) . "\n&deg;F";?></p></div>
+            <div class="col-xs-4 avgtempmobile"><p><?php echo round($avgrow[0], 1) . "\n&deg;F";?></p></div>
+            <div class="col-xs-4 hightempmobile"><p><?php echo round($hightemp[0], 1) . "\n&deg;F";?></p></div>
         </div>
         
         <div class="subtext-low">

@@ -42,6 +42,19 @@ div.lowtemp {
 /*    background-color: red;*/
 }
 
+.lowtempmobile {
+    text-align: right;
+}
+
+.avgtempmobile {
+    text-align: center;
+}
+
+.hightempmobile {
+    text-align: left;
+}
+
+
 div.hightemp {
     float: right;
     text-align: left;
