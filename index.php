@@ -12,19 +12,25 @@
         <script src="js/script.js"></script>
         <script src="Chart.js-2.0.0-beta2/Chart.js"></script>
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-        <script src="js/chart.js"></script>       
+        <script src="js/chart-by-the-hour.js"></script>
+<!--        <script src="js/chart.js"></script>       -->
     </head>
     
-    <body>
-        
-        <?php
+    <?php
         // Request data from MySQL Server via request.php
         require_once 'database/request.php';
-        ?>
+    ?>
+    
+    <body>
+        <div class="row no-margin">
+            <div class="col-xs-12 header">
+                <b>Temperature in Room 219</b>
+            </div>
+        </div>
         
         <div class="row no-margin">
-            <div class="col-xs-10 col-xs-offset-1 border-bottom">
-                <div class="col-xs-12 col-sm-5 col-md-4 temp-main">
+            <div class="col-xs-10 col-xs-offset-1 no-padding border-bottom">
+                <div class="col-xs-12 col-sm-5 col-md-4 no-padding temp-main border-bottom">
                 <?php
                 for ($row_no = $res->num_rows - 1; $row_no >= 0; $row_no--) {
                     $res->data_seek($row_no);
@@ -32,10 +38,11 @@
                 echo "<h1>" . $row['TemperatureF'] . "\n&deg;F</h1>";
                 }
                 ?>
-                    <p>Last reading on <?php echo date('F j, Y \a\t h:i A \(T\)',strtotime($currentDate[0]));?></p>
+                    <p><em>Last updated: </em><?php echo date('F j, Y \a\t h:i A \(T\)',strtotime($currentDate[0]));?></p>
                 </div>
                 <div class="col-xs-12 col-sm-7 col-md-8">
-                    <div id="chartdiv" class="chart hidden-xs"></div>
+<!--                    Hiding chart from mobile-->
+                    <div id="chart-hourly" class="chart-hourly"></div>
                 </div>
             </div>
         
