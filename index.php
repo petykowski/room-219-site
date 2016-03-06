@@ -40,54 +40,46 @@
                 ?>
                     <p><em>Last updated: </em><?php echo date('F j, Y \a\t h:i A \(T\)',strtotime($currentDate[0]));?></p>
                 </div>
-                <div class="col-xs-12 col-sm-7 col-md-8">
-<!--                    Hiding chart from mobile-->
+                <div class="col-xs-12 col-sm-7 col-md-8 no-padding">
+                    <h2 class="section-title">Temperature By The Minute</h2>
                     <div id="chart-hourly" class="chart-hourly"></div>
                 </div>
             </div>
-        
-        </div>
-  
-        <div class="currenttemp">
-            <?php
-            for ($row_no = $res->num_rows - 1; $row_no >= 0; $row_no--) {
-                $res->data_seek($row_no);
-                $row = $res->fetch_assoc();
-                echo "<h1>" . $row['TemperatureF'] . "\n&deg;F</h1>";
-            }
-            ?>
-            <p>Last reading on <?php echo date('F j, Y \a\t h:i A \(T\)',strtotime($currentDate[0]));?></p>
         </div>
         
         <div class="row no-margin">
-            <div class="col-xs-4 col-sm-5 text-right"><p><?php echo round($lowtemp[0], 1) . "\n&deg;F";?></p></div>
-            <div class="col-xs-4 col-sm-2 text-center"><p><?php echo round($avgrow[0], 1) . "\n&deg;F";?></p></div>
-            <div class="col-xs-4 col-sm-5 text-left"><p><?php echo round($hightemp[0], 1) . "\n&deg;F";?></p></div>
+            <div class="col-xs-10 col-xs-offset-1 no-padding">
+                <h2 class="section-title">Week in Review</h2>
+            </div>
+            <div class="col-xs-10 col-xs-offset-1 no-padding">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>EVENT</th>
+                            <th>TEMPERATURE</th>
+                            <th>DATE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Low</td>
+                            <td>64.4°F</td>		
+                            <td>3/6</td>
+                        </tr>
+                        <tr>
+                            <td>High</td>
+                            <td>71.6°F</td>		
+                            <td>3/1</td>
+                        </tr>
+                        <tr>
+                            <td>Average</td>
+                            <td>65.2°F</td>		
+                            <td>Week 10</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        
-<!-- WARNING: Text does not align properly when on small mobile device, should align center -->
-        <div class="row no-margin">
-            <div class="col-xs-12 col-sm-5 text-right text-center-sm"><p>hello1</p></div>
-            <div class="col-xs-12 col-sm-2 text-center text-center-sm"><p>hello2</p></div>
-            <div class="col-xs-12 col-sm-5 text-left text-center-sm"><p>hello3</p></div>
-        </div>
-        
-        <div class="subtext-low">
-            <p class="text-low">Lowest temperature in 7 Days.</p>
-        </div>
-        
-        <div class="subtext-avg">
-            <p class="text-avg">Average temperature of 7 Days.</p>
-        </div>
-        
-        <div class="subtext-high">
-            <p class="text-high">Highest temperature in 7 Days.</p>
-        </div>
-        
-        <div id="outer">
-<!--            <div id="chartdiv" class="chart"></div>-->
-        </div>
-        
         <div id="footer">
             <u><a href="https://github.com/spetykowski/room-219">Code</a></u>
         </div>

@@ -40,7 +40,6 @@ var options = {
             color: 'white',
         },
     },
-    title: 'Temperature By The Minute',
     titleTextStyle: {
         color: 'white',
         fontSize: 12,

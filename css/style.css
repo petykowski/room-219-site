@@ -50,7 +50,37 @@ div.currenttemp {
     width: 100%;
     margin-bottom: -5px;
     text-align: center;
-/*    background-color: blue;*/
+}
+
+
+/*
+ * Typography
+ */
+.section-title {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+
+/*
+ * Table
+ */
+thead {
+    font-size: 9px;
+    color: #bfbfbf;
+    border-bottom: none;
+}
+
+th {
+    font-weight: bold;
+}
+
+.table>thead>tr>th {
+    border-bottom: 1px solid #555;
+}
+
+.table>tbody>tr>td {
+    border-top: 1px solid #555;
 }
 
 
@@ -59,8 +89,8 @@ div.currenttemp {
  */
 
 .header {
-    border-top: 1px solid #333;
-    border-bottom: 1px solid #333;
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #555;
     font-size: 28px;
     text-align: center;
     padding: 15px 0px 15px 0px;
@@ -100,7 +130,6 @@ div.currenttemp {
 }
 
 
-
 #chartdiv {
     width: 100%;
     margin-left: auto;
@@ -117,11 +146,11 @@ div.currenttemp {
  */
 
 .border-bottom {
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #555;
 }
 
 .border-right {
-    border-right: 1px solid #333;
+    border-right: 1px solid #555;
 }
 
 .debug {
@@ -227,7 +256,15 @@ div.subtext-high p {
        padding-top: 85px;
     }
     .temp-main {
-        border-right: 1px solid #333;
+        border-right: 1px solid #555;
+        border-bottom: none;
+        padding-bottom: 29px;
+        height: 299px;
+        margin: 15px 0px 15px 0px
+    }
+    
+    .no-padding {
+    padding-left: 15px;
     }
 }
 
