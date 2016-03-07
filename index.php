@@ -41,7 +41,7 @@
                     <p><em>Last updated: </em><?php echo date('F j, Y \a\t h:i A \(T\)',strtotime($currentDate[0]));?></p>
                 </div>
                 <div class="col-xs-12 col-sm-7 col-md-8 no-padding padding-left">
-                    <h2 class="section-title">Temperature By The Minute</h2>
+                    <h2 class="section-title">Temperature By The Hour</h2>
                     <div id="chart-hourly" class="chart-hourly"></div>
                 </div>
             </div>
@@ -63,18 +63,18 @@
                     <tbody>
                         <tr>
                             <td>Low</td>
-                            <td>64.4&deg;F</td>		
-                            <td>3/6</td>
+                            <td><?php echo round($lowtemp[0], 1) . "\n&deg;F";?></td>		
+                            <td><?php echo $lowtemp[1]; ?></td>
                         </tr>
                         <tr>
                             <td>High</td>
-                            <td>71.6&deg;F</td>		
-                            <td>3/1</td>
+                            <td><?php echo round($hightemp[0], 1) . "\n&deg;F";?></td>		
+                            <td><?php echo $hightemp[1]; ?></td>
                         </tr>
                         <tr>
                             <td>Average</td>
-                            <td>65.2&deg;F</td>		
-                            <td>Week 10</td>
+                            <td><?php echo round($avgrow[0], 1) . "\n&deg;F";?></td>		
+                            <td><?php echo "Week " . date("W"); ?></td>
                         </tr>
                     </tbody>
                 </table>
