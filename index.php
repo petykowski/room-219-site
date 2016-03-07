@@ -63,17 +63,17 @@
                     <tbody>
                         <tr>
                             <td>Low</td>
-                            <td>64.4°F</td>		
+                            <td>64.4&deg;F</td>		
                             <td>3/6</td>
                         </tr>
                         <tr>
                             <td>High</td>
-                            <td>71.6°F</td>		
+                            <td>71.6&deg;F</td>		
                             <td>3/1</td>
                         </tr>
                         <tr>
                             <td>Average</td>
-                            <td>65.2°F</td>		
+                            <td>65.2&deg;F</td>		
                             <td>Week 10</td>
                         </tr>
                     </tbody>
