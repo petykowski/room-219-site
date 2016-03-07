@@ -11,16 +11,18 @@ if (!$con) {
     die('Could not connect: ' . mysqli_error($con));
 }
 
-// Create request for average daily temperature for the past 30 days 
-$dailyaveragerequest = ("SELECT TemperatureF, DATE_FORMAT(Date_Time, '%l:%i') AS TimeOfReading
-FROM env_sensors 
-WHERE DATE(Date_Time) = CURDATE()");
+// Create request for temperature reading at the top of each hour
+$hourlyrequest = ("SELECT TemperatureF AS Temperature, DATE_FORMAT(Date_Time, '%l:%i %p') AS Time
+FROM env_sensors
+WHERE Date_Time IN (
+	SELECT MIN(Date_Time)
+	FROM env_sensors
+	WHERE DATE(Date_Time) = CURDATE()
+	GROUP BY HOUR(Date_Time)
+)");
 
 // Query the request
-$result = mysqli_query($con,$dailyaveragerequest);
-
-// Fetch results row
-$avgtemps = $result->fetch_row();
+$result = mysqli_query($con,$hourlyrequest);
 
 // Close MySQL connection
 mysqli_close($con);
@@ -37,15 +39,13 @@ $table['cols'] = array(
 // Prepare for ForEach loop
 $rows = array();
 
-
 // Parse through results
 foreach($result as $row){
     $temp = array();
-//    $str = date("h\:i", ;
-//    $str = $row['TimeOfReading']->format('h\:i');
+    
     // Add date and temperature to temp arrays then to rows array
-    $temp[] = array('v' => (string) $row['TimeOfReading']);
-    $temp[] = array('v' => (float) $row['TemperatureF']); 
+    $temp[] = array('v' => (string) $row['Time']);
+    $temp[] = array('v' => (float) $row['Temperature']); 
     $rows[] = array('c' => $temp);
     
 }
