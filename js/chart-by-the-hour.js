@@ -11,10 +11,10 @@ function drawChart() {
 // Create our data table out of JSON data loaded from server.
 var data = new google.visualization.DataTable(jsonData);
 
-var showEvery = parseInt(data.getNumberOfRows() / 7);
+var showEvery = parseInt(data.getNumberOfRows() / 4);
     
 var options = {
-    chartArea: { left: '10%', width: "100%", height: "60%" },
+    chartArea: { left: '10%', width: "88%" },
     legend: {
         position: 'top',
         alignment: 'end',
