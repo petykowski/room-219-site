@@ -52,6 +52,10 @@ div.currenttemp {
     text-align: center;
 }
 
+.last {
+    padding-bottom: 50px;
+}
+
 
 /*
  * Typography
@@ -263,7 +267,7 @@ div.subtext-high p {
         margin: 15px 0px 15px 0px
     }
     
-    .no-padding {
+    .padding-left {
     padding-left: 15px;
     }
 }

@@ -40,14 +40,14 @@
                 ?>
                     <p><em>Last updated: </em><?php echo date('F j, Y \a\t h:i A \(T\)',strtotime($currentDate[0]));?></p>
                 </div>
-                <div class="col-xs-12 col-sm-7 col-md-8 no-padding">
+                <div class="col-xs-12 col-sm-7 col-md-8 no-padding padding-left">
                     <h2 class="section-title">Temperature By The Minute</h2>
                     <div id="chart-hourly" class="chart-hourly"></div>
                 </div>
             </div>
         </div>
         
-        <div class="row no-margin">
+        <div class="row last no-margin">
             <div class="col-xs-10 col-xs-offset-1 no-padding">
                 <h2 class="section-title">Week in Review</h2>
             </div>
