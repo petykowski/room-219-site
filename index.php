@@ -13,6 +13,7 @@
         <script src="Chart.js-2.0.0-beta2/Chart.js"></script>
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
         <script src="js/chart-by-the-hour.js"></script>
+        <script src="js/chart-by-the-day.js"></script>
 <!--        <script src="js/chart.js"></script>       -->
     </head>
     
@@ -41,46 +42,54 @@
                     <p class="hidden-sm"><em>Last updated: </em><?php echo date('F j, Y \a\t h:i A \(T\)',strtotime($currentDate[0]));?></p>
                     <p class="visible-sm"><em>Last updated: </em><?php echo date('n\/j\/y \a\t h:i A \(T\)',strtotime($currentDate[0]));?></p>
                 </div>
-                <div class="col-xs-12 col-sm-7 col-md-8 no-padding padding-left">
+                <div class="col-xs-12 col-sm-7 col-md-8 no-padding padding-left last">
                     <h2 class="section-title">Temperature By The Hour</h2>
                     <div id="chart-hourly" class="chart-hourly"></div>
                 </div>
             </div>
         </div>
         
-        <div class="row last no-margin">
-            <div class="col-xs-10 col-xs-offset-1 no-padding">
-                <h2 class="section-title">Week in Review</h2>
-            </div>
-            <div class="col-xs-10 col-xs-offset-1 no-padding">
-                <table class="table table-condensed">
-                    <thead>
-                        <tr>
-                            <th>EVENT</th>
-                            <th>TEMPERATURE</th>
-                            <th>DATE</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Low</td>
-                            <td><?php echo round($lowtemp[0], 1) . "\n&deg;F";?></td>		
-                            <td><?php echo $lowtemp[1]; ?></td>
-                        </tr>
-                        <tr>
-                            <td>High</td>
-                            <td><?php echo round($hightemp[0], 1) . "\n&deg;F";?></td>		
-                            <td><?php echo $hightemp[1]; ?></td>
-                        </tr>
-                        <tr>
-                            <td>Average</td>
-                            <td><?php echo round($avgrow[0], 1) . "\n&deg;F";?></td>		
-                            <td><?php echo "Week " . date("W"); ?></td>
-                        </tr>
-                    </tbody>
-                </table>
+        <div class="row no-margin">
+            <div class="col-xs-10 col-xs-offset-1 no-padding border-bottom">
+                <div class="col-xs-12 no-padding">
+                    <h2 class="section-title">Week in Review</h2>
+                </div>
+                <div class="col-xs-12 col-sm-5 col-md-4 no-padding padding-right">
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>EVENT</th>
+                                <th>TEMPERATURE</th>
+                                <th>DATE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Low</td>
+                                <td><?php echo round($lowtemp[0], 1) . "\n&deg;F";?></td>		
+                                <td><?php echo $lowtemp[1]; ?></td>
+                            </tr>
+                            <tr>
+                                <td>High</td>
+                                <td><?php echo round($hightemp[0], 1) . "\n&deg;F";?></td>		
+                                <td><?php echo $hightemp[1]; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Average</td>
+                                <td><?php echo round($avgrow[0], 1) . "\n&deg;F";?></td>		
+                                <td><?php echo "Week " . date("W"); ?></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row last no-margin">
+                    <div class="col-xs-12 col-sm-7 col-md-8 no-padding padding-left">
+                        <div id="chart-daily" class="chart-daily"></div>
+                    </div>
+                </div>
             </div>
         </div>
+        
         <div id="footer">
             <u><a href="https://github.com/spetykowski/room-219">Code</a></u>
         </div>

@@ -53,7 +53,7 @@ div.currenttemp {
 }
 
 .last {
-    padding-bottom: 50px;
+    padding-bottom: 25px;
 }
 
 
@@ -269,6 +269,10 @@ div.subtext-high p {
     
     .padding-left {
     padding-left: 15px;
+    }
+    
+    .padding-right {
+    padding-right: 25px;
     }
 }
 

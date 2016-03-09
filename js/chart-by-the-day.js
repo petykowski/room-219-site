@@ -3,7 +3,7 @@ google.setOnLoadCallback(drawChart);
 
 function drawChart() {
   var jsonData = $.ajax({
-      url: "database/getDataHourly.php",
+      url: "database/getDataDaily.php",
       dataType:"json",
       async: false
 }).responseText;
@@ -15,6 +15,7 @@ var showEvery = parseInt(data.getNumberOfRows() / 4);
     
 var options = {
     chartArea: { left: '10%', width: "88%" },
+    curveType: 'function',
     legend: {
         position: 'top',
         alignment: 'end',
@@ -46,7 +47,7 @@ var options = {
     },
 };
 
-var chart = new google.visualization.LineChart(document.getElementById('chart-hourly'));
+var chart = new google.visualization.LineChart(document.getElementById('chart-daily'));
 
 chart.draw(data, options);
     

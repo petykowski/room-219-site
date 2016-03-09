@@ -15,6 +15,7 @@ var showEvery = parseInt(data.getNumberOfRows() / 4);
     
 var options = {
     chartArea: { left: '10%', width: "88%" },
+    curveType: 'function',
     legend: {
         position: 'top',
         alignment: 'end',

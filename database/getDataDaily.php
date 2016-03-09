@@ -12,17 +12,17 @@ if (!$con) {
 }
 
 // Create request for temperature reading at the top of each hour
-$hourlyrequest = ("SELECT TemperatureF AS Temperature, DATE_FORMAT(Date_Time, '%l:%i %p') AS Time
+$dailyrequest = ("SELECT TemperatureF AS Temperature, DATE_FORMAT(Date_Time, '%c/%e') AS Date
 FROM env_sensors
 WHERE Date_Time IN (
 	SELECT MIN(Date_Time)
 	FROM env_sensors
-	WHERE DATE(Date_Time) = CURDATE()
-	GROUP BY HOUR(Date_Time)
+	WHERE DATE(Date_Time) BETWEEN (CURRENT_TIMESTAMP() - INTERVAL 7 DAY) AND CURRENT_TIMESTAMP()
+	GROUP BY DAY(Date_Time)
 )");
 
 // Query the request
-$result = mysqli_query($con,$hourlyrequest);
+$result = mysqli_query($con,$dailyrequest);
 
 // Close MySQL connection
 mysqli_close($con);
@@ -44,7 +44,7 @@ foreach($result as $row){
     $temp = array();
     
     // Add date and temperature to temp arrays then to rows array
-    $temp[] = array('v' => (string) $row['Time']);
+    $temp[] = array('v' => (string) $row['Date']);
     $temp[] = array('v' => (float) $row['Temperature']); 
     $rows[] = array('c' => $temp);
     
