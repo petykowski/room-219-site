@@ -1,7 +1,7 @@
 google.load("visualization", "1", {packages:["corechart"]});
-google.setOnLoadCallback(drawChart);
+google.setOnLoadCallback(drawChart2);
 
-function drawChart() {
+function drawChart2() {
   var jsonData = $.ajax({
       url: "database/getDataDaily.php",
       dataType:"json",

@@ -27,5 +27,6 @@ $(window).load(function() {
 });
 
 $(window).resize(function(){
-    drawChart();
+    drawChart1();
+    drawChart2();
 });
