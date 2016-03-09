@@ -38,7 +38,8 @@
                 echo "<h1>" . $row['TemperatureF'] . "\n&deg;F</h1>";
                 }
                 ?>
-                    <p><em>Last updated: </em><?php echo date('F j, Y \a\t h:i A \(T\)',strtotime($currentDate[0]));?></p>
+                    <p class="hidden-sm"><em>Last updated: </em><?php echo date('F j, Y \a\t h:i A \(T\)',strtotime($currentDate[0]));?></p>
+                    <p class="visible-sm"><em>Last updated: </em><?php echo date('n\/j\/y \a\t h:i A \(T\)',strtotime($currentDate[0]));?></p>
                 </div>
                 <div class="col-xs-12 col-sm-7 col-md-8 no-padding padding-left">
                     <h2 class="section-title">Temperature By The Hour</h2>
