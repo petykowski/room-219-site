@@ -14,7 +14,12 @@ var data = new google.visualization.DataTable(jsonData);
 var showEvery = parseInt(data.getNumberOfRows() / 4);
     
 var options = {
-    chartArea: { left: '10%', width: "88%" },
+    chartArea: { 
+        width: "100%",
+        height: "80%",
+        top: "5%",
+        left: "10%",
+    },
     curveType: 'function',
     legend: {
         position: 'top',
