@@ -16,7 +16,7 @@ var showEvery = parseInt(data.getNumberOfRows() / 4);
 var options = {
     chartArea: { 
         width: "100%",
-        height: "80%",
+        height: "78%",
         top: "5%",
         left: "10%",
     },
@@ -32,18 +32,28 @@ var options = {
         maxTextLines: 1,
         textStyle: {
             color: 'white',
+            fontName: "brandon-grotesque",
+            bold: "true",
+            fontSize: 13,
         },
     },
     vAxis: {
         textStyle: {
             color: 'white',
+            fontName: "brandon-grotesque",
+            bold: "true",
+            fontSize: 13,
         },
+        viewWindowMode: "maximized",
     },
     lineWidth: 1.5,
     legend: {
         position: 'bottom',
         textStyle: {
             color: 'white',
+            fontName: "brandon-grotesque",
+            bold: "true",
+            fontSize: 14,
         },
     },
     titleTextStyle: {

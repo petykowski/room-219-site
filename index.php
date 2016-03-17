@@ -42,7 +42,7 @@
                     <p class="hidden-sm"><em>Last updated: </em><?php echo date('F j, Y \a\t h:i A \(T\)',strtotime($currentDate[0]));?></p>
                     <p class="visible-sm"><em>Last updated: </em><?php echo date('n\/j\/y \a\t h:i A \(T\)',strtotime($currentDate[0]));?></p>
                 </div>
-                <div class="col-xs-12 col-sm-7 col-md-8 no-padding padding-left last">
+                <div class="col-xs-12 col-sm-7 col-md-8 padding-left no-padding last">
                     <h2 class="section-title">Temperature By The Hour</h2>
                     <div id="chart-hourly" class="chart-hourly"></div>
                 </div>
