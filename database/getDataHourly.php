@@ -17,9 +17,9 @@ FROM env_sensors
 WHERE Date_Time IN (
 	SELECT MIN(Date_Time)
 	FROM env_sensors
-	WHERE DATE(Date_Time) = CURDATE()
+	WHERE Date_Time BETWEEN (CURRENT_TIMESTAMP() - INTERVAL 23 HOUR) AND CURRENT_TIMESTAMP()
 	GROUP BY HOUR(Date_Time)
-)");
+) LIMIT 1, 23");
 
 // Query the request
 $result = mysqli_query($con,$hourlyrequest);
