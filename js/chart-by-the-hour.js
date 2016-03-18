@@ -11,7 +11,7 @@ function drawChart1() {
 // Create our data table out of JSON data loaded from server.
 var data = new google.visualization.DataTable(jsonData);
 
-var showEvery = parseInt(data.getNumberOfRows() / 4);
+//var showEvery = parseInt(data.getNumberOfRows() / 5);
     
 var options = {
     chartArea: { 
@@ -28,7 +28,7 @@ var options = {
     backgroundColor: 'black',
     hAxis: {
         baseline: '100',
-        showTextEvery: showEvery,
+        showTextEvery: 5,
         maxTextLines: 1,
         textStyle: {
             color: 'white',
@@ -36,6 +36,7 @@ var options = {
             bold: "true",
             fontSize: 13,
         },
+        
     },
     vAxis: {
         textStyle: {
