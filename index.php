@@ -90,6 +90,37 @@
             </div>
         </div>
         
+        <div class="row no-margin">
+            <div class="col-xs-10 col-xs-offset-1 no-padding border-bottom">
+                <div class="col-xs-12 no-padding">
+                    <h2 class="section-title">Historical Records</h2>
+                </div>
+                <div class="col-xs-12 no-padding">
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>EVENT</th>
+                                <th>TEMPERATURE</th>
+                                <th>DATE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lowest</td>
+                                <td><?php echo round($recordlow[0], 1) . "\n&deg;F";?></td>		
+                                <td><?php echo $recordlow[1]; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Highest</td>
+                                <td><?php echo round($recordhigh[0], 1) . "\n&deg;F";?></td>		
+                                <td><?php echo $recordhigh[1]; ?></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
         <div id="footer">
             <u><a href="https://github.com/spetykowski/room-219">Code</a></u>
         </div>

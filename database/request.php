@@ -31,5 +31,29 @@ $hightemp = $hightempreq->fetch_row();
 $currentDateReq = $conn->query("SELECT Date_Time FROM env_sensors ORDER BY TempID DESC LIMIT 1");
 $currentDate = $currentDateReq ->fetch_row();
 date_default_timezone_set('America/New_York');
+
+//
+// HISTORICAL DATA
+//
+
+// Request highest temperature ever recorded
+$recordhighrequest = $conn->query("SELECT TemperatureF AS 'Temperature', DATE_FORMAT(Date_Time, '%M %e\, %Y') AS 'Date'
+FROM env_sensors
+WHERE TemperatureF IN (
+	SELECT MAX(TemperatureF)
+	FROM env_sensors
+)
+LIMIT 1");
+$recordhigh = $recordhighrequest->fetch_row();
+
+// Request lowest temperature ever recorded
+$recordlowrequest = $conn->query("SELECT TemperatureF AS 'Temperature', DATE_FORMAT(Date_Time, '%M %e\, %Y') AS 'Date'
+FROM env_sensors
+WHERE TemperatureF IN (
+	SELECT MIN(TemperatureF)
+	FROM env_sensors
+)
+LIMIT 1");
+$recordlow = $recordlowrequest->fetch_row();
         
 ?>
