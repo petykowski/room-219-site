@@ -30,7 +30,7 @@
         </div>
         
         <div class="row no-margin">
-            <div class="col-xs-10 col-xs-offset-1 no-padding border-bottom">
+            <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 no-padding border-bottom">
                 <div class="col-xs-12 col-sm-5 col-md-4 no-padding temp-main border-bottom">
                 <?php
                 for ($row_no = $res->num_rows - 1; $row_no >= 0; $row_no--) {
@@ -50,12 +50,12 @@
         </div>
         
         <div class="row no-margin">
-            <div class="col-xs-10 col-xs-offset-1 no-padding border-bottom">
+            <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 no-padding border-bottom">
                 <div class="col-xs-12 no-padding">
                     <h2 class="section-title">Week in Review</h2>
                 </div>
                 <div class="col-xs-12 col-sm-5 col-md-4 no-padding padding-right">
-                    <table class="table table-condensed">
+                    <table class="table table-condensed highlight">
                         <thead>
                             <tr>
                                 <th>EVENT</th>
@@ -65,17 +65,17 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Low</td>
+                                <td><em>Low</em></td>
                                 <td><?php echo round($lowtemp[0], 1) . "\n&deg;F";?></td>		
                                 <td><?php echo $lowtemp[1]; ?></td>
                             </tr>
                             <tr>
-                                <td>High</td>
+                                <td><em>High</em></td>
                                 <td><?php echo round($hightemp[0], 1) . "\n&deg;F";?></td>		
                                 <td><?php echo $hightemp[1]; ?></td>
                             </tr>
                             <tr>
-                                <td>Average</td>
+                                <td><em>Average</em></td>
                                 <td><?php echo round($avgrow[0], 1) . "\n&deg;F";?></td>		
                                 <td><?php echo "Week " . date("W"); ?></td>
                             </tr>
@@ -91,12 +91,12 @@
         </div>
         
         <div class="row no-margin">
-            <div class="col-xs-10 col-xs-offset-1 no-padding border-bottom">
+            <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 no-padding border-bottom">
                 <div class="col-xs-12 no-padding">
                     <h2 class="section-title">Historical Records</h2>
                 </div>
                 <div class="col-xs-12 no-padding">
-                    <table class="table table-condensed">
+                    <table class="table table-condensed highlight">
                         <thead>
                             <tr>
                                 <th>EVENT</th>
@@ -106,12 +106,12 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Lowest</td>
+                                <td><em>Lowest</em></td>
                                 <td><?php echo round($recordlow[0], 1) . "\n&deg;F";?></td>		
                                 <td><?php echo $recordlow[1]; ?></td>
                             </tr>
                             <tr>
-                                <td>Highest</td>
+                                <td><em>Highest</em></td>
                                 <td><?php echo round($recordhigh[0], 1) . "\n&deg;F";?></td>		
                                 <td><?php echo $recordhigh[1]; ?></td>
                             </tr>

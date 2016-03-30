@@ -65,6 +65,11 @@ div.currenttemp {
     font-weight: bold;
 }
 
+.highlight em {
+    font-style: normal;
+    font-weight: bold;
+}
+
 
 /*
  * Table
