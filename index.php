@@ -36,7 +36,7 @@
                 for ($row_no = $res->num_rows - 1; $row_no >= 0; $row_no--) {
                     $res->data_seek($row_no);
                     $row = $res->fetch_assoc();
-                echo "<h1>" . $row['TemperatureF'] . "\n&deg;F</h1>";
+                echo "<h1>" . round($row['TemperatureF'], 1) . "\n&deg;F</h1>";
                 }
                 ?>
                     <p class="timestamp-long"><em>Last updated: </em><?php echo date('F j, Y \a\t h:i A \(T\)',strtotime($currentDate[0]));?></p>
